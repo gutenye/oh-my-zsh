@@ -5,12 +5,24 @@ setopt cdable_vars          # Change directory to a path stored in a variable.
 setopt auto_name_dirs       # Auto add variable-stored paths to ~ list.
 setopt multios              # Write to multiple descriptors.
 
+# cd
+function c(){
+	cd `parse_cd $*`
+}
+alias cw="cd $HOME/downloads"
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 alias cd.....='cd ../../../..'
-alias cd/='cd /'
+alias -- -='cd -'
+function cd~() { cd $HOME/$1 }
+compdef '_files -W $HOME' cd~
+function cd/() { cd /$1 }
+compdef '_files -W /' cd/
 
 alias 1='cd -'
 alias 2='cd +2'

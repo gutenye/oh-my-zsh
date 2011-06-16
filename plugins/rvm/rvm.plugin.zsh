@@ -1,3 +1,5 @@
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+
 # Get the name of the current branch.
 function rvm_prompt_info() {
   local ruby_version=$(~/.rvm/bin/rvm-prompt 2> /dev/null)

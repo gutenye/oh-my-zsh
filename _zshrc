@@ -1,0 +1,39 @@
+# Path to your oh-my-zsh configuration.
+export ZSH=$HOME/.zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+export ZSH_THEME="guten" 
+
+# Set to this to use case-sensitive completion
+export CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# export DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# export DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=( 
+	directories vi-mode ce ssh-agent pacman autosudo ip run extract autojump
+	ruby python 
+	git gem github perl pip rails3 cap capanm bundler npm rvm
+	view sysupgrade
+	)
+
+source $ZSH/oh-my-zsh.zsh
+
+# Customize to your needs...
+export PATH="$HOME/bin:$PATH"
+#setopt extendedglob
+#unsetopt correct_all
+zstyle ':completion:*' matcher-list '' ''
+
+alias py2="source /opt/python2/bin/activate"
